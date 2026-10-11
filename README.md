@@ -1,49 +1,37 @@
 # Pulsar Hub — The Strongest Battlegrounds
 
-Fluent UI (Night-Hub style) hub for **The Strongest Battlegrounds**.
+Fluent UI **hosted on this repo** so you control the UI 100%.
 
 ## Structure
 
 ```
 PulsarTSB/
-├── main.lua      ← full hub (UI + logic)
-├── loader.lua    ← one-line execute
+├── main.lua                 ← hub logic + tabs
+├── loader.lua               ← one-line execute
+├── Fluent/
+│   ├── main.lua             ← Fluent UI library (YOURS — edit freely)
+│   └── Addons/
+│       ├── SaveManager.lua
+│       └── InterfaceManager.lua
 └── README.md
 ```
 
-Edit `main.lua` freely — tabs, toggles and sections are modular so you can restyle the UI for your GitHub repo.
-
 ## How to use
 
-1. Join **The Strongest Battlegrounds**
-2. Open your executor
-3. Paste and run:
-
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Overthinker-1/PulsarTSB/main/main.lua"))()
 ```
 
-Or paste the contents of `main.lua` directly.
+**Toggle UI:** Left Ctrl
 
-**Toggle UI:** `Left Ctrl`
+## Edit the UI
 
-## Tabs
+- Themes / window size / acrylic → top of `main.lua` (`CreateWindow`)
+- Tabs, toggles, labels → sections inside `main.lua`
+- Fluent core look → edit `Fluent/main.lua` (your copy)
 
-| Tab | Features |
-|-----|----------|
-| **Combat** | Auto Block, Auto Combo, Auto Attack, Auto Ultimate, Auto Dash, Kill Aura |
-| **Farm** | Auto Farm, Auto Kill, Target Priority (Nearest / Lowest HP / Selected), player picker |
-| **Visuals** | Player ESP (name, health, distance, box, tracers), Aimbot + FOV |
-| **Movement** | Walk Speed, Jump Power, Infinite Jump, Fly, NoClip |
-| **Misc** | Anti-AFK, Anti-Fling, Anti-Ragdoll, Auto Escape, FPS Boost, Fullbright, TP, Server Hop |
-| **Settings** | SaveManager / InterfaceManager (theme, config save) |
+## Upload order on GitHub
 
-## Notes
-
-- Combat remotes vary by TSB update — M1 / Block / Ult / Dash use `VirtualInput` key simulation (F = block, G = ult, Q = dash).
-- For tighter combat (techs, hitbox, desync) extend the Combat section with your own remote paths.
-- Acrylic + Darker theme matches the Night Hub look from the reference screenshot.
-
-## License
-
-Use / edit freely in your repository.
+1. Create folders `Fluent` and `Fluent/Addons`
+2. Upload all files keeping the same paths
+3. Wait ~30s for raw CDN, then execute
