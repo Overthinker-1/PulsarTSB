@@ -3,4 +3,4 @@
   Replace the URL with your GitHub raw link after you push.
 ]]
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Overthinker-1/PulsarTSB/refs/heads/main/main.lua"))()
